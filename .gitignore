@@ -1,0 +1,125 @@
+# ======================================
+# Python
+# ======================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+*.env
+*.venv
+
+# Distribution / packaging
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Logs and runtime files
+*.log
+*.out
+*.err
+logs/
+*.pid
+*.seed
+*.cover
+.coverage
+coverage.xml
+htmlcov/
+.tox/
+.nox/
+.cache/
+pytest_cache/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# MyPy / Pyright / Pyre / Pylint
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+.pylint.d/
+
+# ======================================
+# VSCode
+# ======================================
+.vscode/
+.history/
+*.code-workspace
+
+# ======================================
+# Weights & Biases
+# ======================================
+wandb/
+.wandb/
+wandb-debug.log
+wandb/latest-run/
+wandb/*/files/
+wandb/*/media/
+wandb/*/tmp/
+wandb/*/run-*/output.log
+wandb/*/run-*/events.out.tfevents.*
+
+# ======================================
+# Other IDEs / Editors
+# ======================================
+.idea/
+*.iml
+*.sublime-workspace
+*.sublime-project
+.DS_Store
+Thumbs.db
+
+# ======================================
+# Data / Results / Outputs
+# ======================================
+*.h5
+*.pkl
+*.ckpt
+*.pt
+*.pth
+*.npz
+*.npy
+*.csv
+*.tsv
+*.json
+*.yml
+*.zip
+*.tar
+*.tar.gz
+*.tmp
+*.bak
+
+# ======================================
+# Custom project outputs
+# ======================================
+runs/
+outputs/
+outputs-old/
+checkpoints/
+results/
+experiments/
+wandb_logs/
+wandb_run/

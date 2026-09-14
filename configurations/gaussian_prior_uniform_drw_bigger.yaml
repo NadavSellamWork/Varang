@@ -1,0 +1,66 @@
+trainer:
+  accelerator: auto
+  devices: auto
+  precision: "16"
+  max_steps: 75000
+  lr: 1e-4
+  weight_decay: 0.05
+
+unet_model:
+  sequence_size: 256
+  harmonic_positional_encoding_power: 7
+  t_encoder_num_layers: 1
+
+  base_channels: 128
+  channel_mults: [1, 2, 4]
+  num_res_blocks: 3
+  norm_groups: 8
+  attn_resolutions: [64]
+  attn_heads: 4
+  final_tanh: false
+  use_input_positional_encoding: true
+  xpos_encoder_num_layers: 1
+
+  down_kernel: 4
+  down_stride: 2
+  down_padding: 1
+  up_kernel: 4
+  up_stride: 2
+  up_padding: 1
+
+  degrees_of_freedom: 5 # for t - student only
+
+  domain: frequency
+  include_other_domain: true
+
+   # -------------------------
+  # NEW FiLM conditioning fields
+  # -------------------------
+
+  # unconditional => no cond vector
+  extra_cond_dim: 128
+
+  # size of global FiLM conditioning vector
+  global_cond_dim: 128
+
+data:
+  dataset_folder: "datasets/uniform_amplitude_drw"
+  data_class: "AmplitudeDRWDataManager"
+  outlier_percentage: 0.00 # this is only used if the dataset is made of curves and outliers
+  batch_size: 512
+  data_channels: 1
+
+rendering:
+  log_every_n_steps: 500
+  num_sampled_curves: 1000
+
+wandb:
+  project: "astrophysics noise modeling"
+  name: "gaussian prior - uniform drw bigger model"
+  wandb_mode: online
+
+loss_function:
+  include_contrastive_loss: True
+  include_consistency_loss: True
+  
+lightning_wrapper: "GaussianPriorFlowMatching"

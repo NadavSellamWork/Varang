@@ -1,0 +1,21 @@
+# Core deep learning stack. Install a CUDA build of torch separately first if you
+# want GPU support (see https://pytorch.org/get-started/locally/), then run
+# `pip install -r requirements.txt` to fill in the rest.
+torch>=2.1
+torchdiffeq>=0.2.3
+pytorch-lightning>=2.0
+wandb>=0.16
+
+# Config validation
+pydantic>=2.0
+PyYAML>=6.0
+
+# Scientific stack
+numpy>=1.24
+scipy>=1.10
+matplotlib>=3.7
+tqdm>=4.65
+
+# Running the notebooks under notebooks/ and figures/
+jupyter>=1.0
+nbconvert>=7.0
